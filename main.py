@@ -5,6 +5,7 @@ import csv
 import os
 from datetime import datetime
 from send_mail import send_mail
+from send_telegram import send_telegram
 
 
 def save(data):
@@ -58,7 +59,10 @@ def verify_news():
             freshs_lst.append(new)
     if freshs_lst:
         save(new_lst)
-        send_mail(freshs_lst, subject='Новые объявления АЛМАГ')
+        # send_mail(freshs_lst, subject='Новые объявления АЛМАГ')
+        for i in freshs_lst:
+            # print(f"{i['name']} {i['price']} {i['link']}")
+            send_telegram(f"{i['name']} {i['price']} {i['link']}")
 
 
 def run():

@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 
 
 def send_mail(list_text,
-            #   recipients=['tasha1234@mail.ru', 'kotvickiy@inbox.ru'],
+              # recipients=['tasha1234@mail.ru'],
               recipients=['kotvickiy@inbox.ru'],
               subject = '',
               server='smtp.mail.ru',
